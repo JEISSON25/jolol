@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'rest_framework',
     'import_export',
     'storages',           # Amazon S3 storage
@@ -38,6 +39,15 @@ INSTALLED_APPS = [
     'apps.mesas',
     'apps.votos',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Configuración de Amazon S3
-STATIC_URL = 'static/'  
+STATIC_URL = 'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
 MEDIA_URL = 'media/'
 
 
