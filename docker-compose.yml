@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: sisvote_web
+    command: gunicorn sisvoteAdmin.wsgi:application --bind 0.0.0.0:8031
+    volumes:
+      - .:/app
+    ports:
+      - "8031:8031"
+    depends_on:
+      - db
+    environment:
+      DEBUG: '1'
+      DJANGO_SETTINGS_MODULE: sisvoteAdmin.settings
+      # Variables de entorno para la conexión a la base de datos (si deseas que el contenedor de db sea el host)
+      DATABASE_HOST: db
+      DATABASE_NAME: u647628927_sisvote
+      DATABASE_USER: u647628927_sisvote
+      DATABASE_PASSWORD: "5v>DSb>paP"
+
+  db:
+    image: mysql:8.0
+    container_name: sisvote_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: u647628927_sisvote
+      MYSQL_USER: u647628927_sisvote
+      MYSQL_PASSWORD: "5v>DSb>paP"
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
