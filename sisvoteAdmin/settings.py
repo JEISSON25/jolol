@@ -65,11 +65,11 @@ WSGI_APPLICATION = 'sisvoteAdmin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u647628927_sisvote',
-        'USER': 'u647628927_sisvote',
-        'PASSWORD': 'P5]*U[r:Oe',
-        'HOST': '193.203.166.203',
-        'PORT': '3306',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT'),
     }
 }
 

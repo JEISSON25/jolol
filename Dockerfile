@@ -19,4 +19,4 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # Expone el puerto y define el comando por defecto (se puede cambiar a runserver en desarrollo)
-CMD ["gunicorn", "sisvoteAdmin.wsgi:application", "--bind", "0.0.0.0:8031"]
+CMD ["gunicorn", "sisvoteAdmin.wsgi:application", "--bind", "0.0.0.0:8013"]
