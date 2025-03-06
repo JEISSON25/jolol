@@ -3,7 +3,7 @@ from apps.common.models import TimeStampedModel
 from apps.empresas.models import Empresa  # Se usa para relacionar id_empresa
 
 class Estudiante(TimeStampedModel):
-    documento = models.CharField(max_length=50, unique=True)
+    documento = models.CharField(max_length=50)
     nombres = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
     qr_sufragante = models.CharField(max_length=100)
