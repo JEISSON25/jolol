@@ -4,4 +4,4 @@ from .models import Estudiante
 
 @admin.register(Estudiante)
 class EstudianteAdmin(ImportExportModelAdmin):
-    list_display = ('documento', 'nombres', 'apellidos', 'votado')
+    list_display = ('documento', 'nombres', 'grado', 'votado')

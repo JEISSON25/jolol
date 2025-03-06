@@ -15,4 +15,4 @@ class Estudiante(TimeStampedModel):
     votado = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.nombres} {self.apellidos}"
+        return f"{self.documento} {self.nombres}"
