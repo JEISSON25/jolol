@@ -1,0 +1,67 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribución / empaquetado
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.wheel
+
+# Entornos virtuales
+entorno/
+env/
+venv/
+ENV/
+.venv/
+.ENV/
+env.bak/
+venv.bak/
+
+# Configuración local y archivos temporales
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.swp
+*.swo
+*~
+.cache
+.coverage
+.tox
+.mypy_cache
+.pytest_cache
+pytestdebug.log
+
+# Configuración de editores/IDEs
+.vscode/
+.idea/
+*.iml
+
+# Archivos de Django
+# (migraciones generadas automáticamente, si no quieres ignorarlas, puedes comentar la línea)
+**/migrations/__pycache__/
+**/migrations/*.pyc
+**/migrations/*.py
+
+# Archivos estáticos y media (si se generan localmente)
+staticfiles/
+media/
+# O bien, si usas collectstatic para generar en otra carpeta:
+static/
+media/
+
+# Credenciales / Variables de entorno
+.env
+.env.*
