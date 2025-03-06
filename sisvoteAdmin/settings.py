@@ -9,7 +9,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kjv0y-cia)k7f2ecm)f7k(v33%1gf65mjd=!7kh(neqg#qidxm'
 DEBUG = True
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh"]
+ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh",
+                 "cloudapi.sisvote.si3.com.co", 
+                 "sisvote.si3.com.co"]
+CSRF_TRUSTED_ORIGINS = [
+    'https://cloudapi.sisvote.si3.com.co',
+    'https://sisvote.si3.com.co',
+    # otros dominios de confianza...
+]
+
 
 # Application definition
 INSTALLED_APPS = [
