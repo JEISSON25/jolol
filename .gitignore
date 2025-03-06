@@ -29,7 +29,7 @@ env.bak/
 venv.bak/
 
 # Configuración local y archivos temporales
-*.sqlite3
+# *.sqlite3
 *.log
 *.pot
 *.pyc
