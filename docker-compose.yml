@@ -16,9 +16,9 @@ services:
       DJANGO_SETTINGS_MODULE: sisvoteAdmin.settings
       # Variables de entorno para la conexión a la base de datos (si deseas que el contenedor de db sea el host)
       DATABASE_HOST: db
-      DATABASE_NAME: u647628927_sisvote
-      DATABASE_USER: u647628927_sisvote
-      DATABASE_PASSWORD: "5v>DSb>paP"
+      DATABASE_NAME: admin_sisvote
+      DATABASE_USER: sisvote
+      DATABASE_PASSWORD: "J!907l7kd"
 
   db:
     image: mysql:8.0
