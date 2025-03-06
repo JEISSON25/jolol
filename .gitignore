@@ -21,6 +21,7 @@ var/
 # Entornos virtuales
 entorno/
 env/
+ent/
 venv/
 ENV/
 .venv/
