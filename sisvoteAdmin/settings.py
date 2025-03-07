@@ -9,9 +9,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kjv0y-cia)k7f2ecm)f7k(v33%1gf65mjd=!7kh(neqg#qidxm'
 DEBUG = True
 # ALLOWED_HOSTS = ['*']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", "https")
+ALLOWED_HOSTS = ["*"]
 
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    f"http://{config('DOMAIN')}",
+    f"https://{config('DOMAIN')}"
+]
+
+# CORS settings
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    f"http://{config('DOMAIN')}",
+    f"https://{config('DOMAIN')}"
+]
+
+CORS_EXPOSE_HEADERS = [
+    "Access-Control-Allow-Origin",
+    "Access-Control-Allow-Headers",
+    "Access-Control-Allow-Methods",
+    "Access-Control-Allow-Credentials",
+]
 # Application definition
 INSTALLED_APPS = [
     'corsheaders',
@@ -33,15 +53,7 @@ INSTALLED_APPS = [
     'apps.mesas',
 ]
 
-ALLOWED_HOSTS = ['*']
-CORS_ALLOW_ALL_ORIGINS = True
 
-
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://*.sisvote.si3.com.co",
-    # Otros dominios de confianza...
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
