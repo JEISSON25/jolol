@@ -2,6 +2,9 @@ from django.db import models
 from apps.common.models import TimeStampedModel
 from apps.empresas.models import Empresa
 from apps.archivo.models import Archivo
+from apps.votos.models import Voto
+from django.db.models.signals import pre_save, post_save
+from django.dispatch import receiver
 
 from django.db import models
 
@@ -26,3 +29,11 @@ class Candidato(TimeStampedModel):
 
     def __str__(self):
         return self.nombre
+
+
+@receiver(post_save, sender=Voto)
+def set_voto(sender, instance, created, **kwargs):
+
+    if created:
+        instance.candidato.votos += 1
+        instance.candidato.save()
