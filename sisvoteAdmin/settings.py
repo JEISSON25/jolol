@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'apps.candidatos',
     'apps.empresas',
     'apps.estudiantes',
-    'apps.mesas'
+    'apps.mesas',
 ]
 
 
