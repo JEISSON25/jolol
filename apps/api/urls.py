@@ -4,8 +4,7 @@ from django.urls import path, include
 # Importamos los ViewSet de cada app
 from apps.estudiantes.views import EstudianteViewSet
 from apps.empresas.views import EmpresaViewSet
-from apps.candidatos.views import CandidatoViewSet
-from apps.votos.views import VotoViewSet
+from apps.candidatos.views import CandidatoViewSet, VotoViewSet
 from apps.mesas.views import MesaViewSet
 
 # Creamos el router y registramos cada ruta
