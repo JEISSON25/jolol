@@ -18,9 +18,12 @@ CSRF_TRUSTED_ORIGINS = [
     # otros dominios de confianza...
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 # Application definition
 INSTALLED_APPS = [
+    'corsheaders',
     "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,6 +52,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
