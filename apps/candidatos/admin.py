@@ -4,8 +4,8 @@ from .models import Candidato, TipoEleccion, Voto
 
 @admin.register(Voto)
 class VotoAdmin(ImportExportModelAdmin):
-    list_display = ('estudiante', 'mesa', 'empresa', 'fechaHora')
-    
+    list_display = ('estudiante', 'mesa', 'empresa', 'candidato', 'fechaHora')
+
 @admin.register(Candidato)
 class CandidatoAdmin(ImportExportModelAdmin):
     list_display = ('nombre', 'eleccion', 'empresa', 'tarjeton' ,'votos')
