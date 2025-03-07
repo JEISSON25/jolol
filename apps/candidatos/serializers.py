@@ -1,5 +1,11 @@
 from rest_framework import serializers
 from .models import Candidato, TipoEleccion
+from apps.archivo.models import Archivo  # Asegúrate de importar el modelo Archivo
+
+class ArchivoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Archivo
+        fields = '__all__'  # O especifica los campos que necesitas
 
 class TipoEleccionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -7,7 +13,8 @@ class TipoEleccionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CandidatoSerializer(serializers.ModelSerializer):
-    eleccion = TipoEleccionSerializer()  # Representación anidada
+    eleccion = TipoEleccionSerializer()  # Representación anidada para TipoEleccion
+    archivo = ArchivoSerializer()        # Representación anidada para Archivo
 
     class Meta:
         model = Candidato
