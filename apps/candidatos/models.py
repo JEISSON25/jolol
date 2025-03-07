@@ -43,7 +43,10 @@ class Voto(TimeStampedModel):
 
 @receiver(post_save, sender=Voto)
 def set_voto(sender, instance, created, **kwargs):
-
     if created:
-        instance.candidato.votos += 1
-        instance.candidato.save()
+        # Contamos cuántos votos tiene el estudiante (incluyendo el recién creado)
+        votos_estudiante = Voto.objects.filter(estudiante=instance.estudiante).count()
+        # Solo se incrementa si el estudiante tiene como máximo 2 votos permitidos
+        if votos_estudiante <= 2:
+            instance.candidato.votos += 1
+            instance.candidato.save()
