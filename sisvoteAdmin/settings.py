@@ -9,16 +9,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kjv0y-cia)k7f2ecm)f7k(v33%1gf65mjd=!7kh(neqg#qidxm'
 DEBUG = True
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh",
-                 "cloudapi.sisvote.si3.com.co", 
-                 "sisvote.si3.com.co"]
-CSRF_TRUSTED_ORIGINS = [
-    'https://cloudapi.sisvote.si3.com.co',
-    'https://sisvote.si3.com.co',
-    # otros dominios de confianza...
-]
+ALLOWED_HOSTS = ['*']
+
+# ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh",
+#                  "cloudapi.sisvote.si3.com.co", 
+#                  "sisvote.si3.com.co"]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://cloudapi.sisvote.si3.com.co',
+#     'https://sisvote.si3.com.co',
+#     # otros dominios de confianza...
+# ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     # "https://example.com",
+#     # "https://sub.example.com",
+#     "http://localhost:8080",
+#     "http://127.0.0.1:8000",
+#     "http://192.168.1.2:8000",
+#     "https://api.avill.com.co",
+#     "https://exp.host",
+# ]
 
 
 # Application definition
