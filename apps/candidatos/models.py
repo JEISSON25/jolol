@@ -1,8 +1,9 @@
 from django.db import models
 from apps.common.models import TimeStampedModel
+from apps.estudiantes.models import Estudiante
 from apps.empresas.models import Empresa
 from apps.archivo.models import Archivo
-from apps.votos.models import Voto
+from apps.mesas.models import Mesa
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 
@@ -30,6 +31,16 @@ class Candidato(TimeStampedModel):
     def __str__(self):
         return self.nombre
 
+class Voto(TimeStampedModel):
+    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
+    candidato1 = models.ForeignKey(Candidato, related_name='votos_candidato1', on_delete=models.CASCADE)
+    candidato2 = models.ForeignKey(Candidato, related_name='votos_candidato2', on_delete=models.CASCADE)
+    fechaHora = models.DateTimeField(auto_now_add=True)
+    mesa = models.ForeignKey(Mesa, on_delete=models.CASCADE)
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Voto de {self.estudiante}"
 
 @receiver(post_save, sender=Voto)
 def set_voto(sender, instance, created, **kwargs):
