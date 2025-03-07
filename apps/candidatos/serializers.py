@@ -7,7 +7,7 @@ class TipoEleccionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CandidatoSerializer(serializers.ModelSerializer):
-    tipo_eleccion = TipoEleccionSerializer()  # Representación anidada
+    eleccion = TipoEleccionSerializer()  # Representación anidada
 
     class Meta:
         model = Candidato
