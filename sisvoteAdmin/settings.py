@@ -17,15 +17,6 @@ CSRF_TRUSTED_ORIGINS = [
     # Otros dominios de confianza...
 ]
 
-# ALLOWED_HOSTS = ["*", ".vercel.app", ".now.sh",
-#                  "cloudapi.sisvote.si3.com.co", 
-#                  "sisvote.si3.com.co"]
-# CSRF_TRUSTED_ORIGINS = [
-#     'https://cloudapi.sisvote.si3.com.co',
-#     'https://sisvote.si3.com.co',
-#     # otros dominios de confianza...
-# ]
-
 
 
 # Application definition
