@@ -104,6 +104,10 @@ DATABASES = {
         'PASSWORD': config('DATABASE_PASSWORD'),
         'HOST': config('DATABASE_HOST'),
         'PORT': config('DATABASE_PORT'),
+        'OPTIONS': {
+            'autocommit': True,
+        },
+        'CONN_MAX_AGE': 600,  
     }
 }
 
