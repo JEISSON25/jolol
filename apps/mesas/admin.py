@@ -4,4 +4,4 @@ from .models import Mesa
 
 @admin.register(Mesa)
 class MesaAdmin(ImportExportModelAdmin):
-    list_display = ('nombre', 'empresa')
+    list_display = ['nombre']
